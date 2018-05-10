@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class EncryptMain {
     public static void main(String[] args) throws NoSuchPaddingException, IOException, NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
-        String test = EncryptTest002.encrypt02("test");
+        String test = EncryptTest002.encrypt02("AAAAAAAAAA");
         System.out.println("加密:" + test);
 
 

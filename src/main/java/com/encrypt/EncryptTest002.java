@@ -53,8 +53,9 @@ public class EncryptTest002 {
         return URLEncoder.encode(new BASE64Encoder().encodeBuffer(results),"UTF-8");
     }
 
-    public static String decrypt02(String text){
+    public static String decrypt02(String text) throws UnsupportedEncodingException {
         byte[] results = new byte[0];
+        String rtn = "";
         try{
             byte[] key = "1234567890123456".getBytes();
 
@@ -65,12 +66,12 @@ public class EncryptTest002 {
             IvParameterSpec ivSpec = new IvParameterSpec( key );
             cipher.init( Cipher.DECRYPT_MODE, spec, ivSpec );
             results =cipher.doFinal( new BASE64Decoder().decodeBuffer( myString ) );
-
+            rtn = new String( results,"UTF-8" );
         }catch (Exception e){
             e.printStackTrace();
         }
 
-        return new String( results );
+        return rtn;
     }
 
 }
